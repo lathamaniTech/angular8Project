@@ -1,0 +1,16 @@
+<!-- <lib-ngx-super-dashboard></lib-ngx-super-dashboard> -->
+<div class="content-area">
+  <lib-ngx-super-dashboard
+    [dynamicFormFieldData]="dynamicSearchFormFields"
+    (onSelect)="onSelected($event)"
+    (onSubmit)="onSearchSubmit($event)"
+    [cardConfig]="countCardsListData"
+    [chartsConfig]="dashboardChartConfig"
+    (onSelectChart)="selectedChart($event)"
+    [gridOneConfig]="cardTableData"
+    [gridTwoConfig]="gridTableData"
+  >
+  </lib-ngx-super-dashboard>
+</div>
+
+<router-outlet></router-outlet>

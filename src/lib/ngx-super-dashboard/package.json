@@ -1,0 +1,22 @@
+{
+  "name": "ngx-super-dashboard",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "@angular/common": "*8.2.14",
+    "@angular/core": "*8.2.14",
+    "angular-google-charts": "^1.1.6"
+  },
+  "dependencies": {
+    "tslib": "^2.0.0"
+  },
+  "main": "bundles/ngx-super-dashboard.umd.js",
+  "module": "fesm5/ngx-super-dashboard.js",
+  "es2015": "fesm2015/ngx-super-dashboard.js",
+  "esm5": "esm5/ngx-super-dashboard.js",
+  "esm2015": "esm2015/ngx-super-dashboard.js",
+  "fesm5": "fesm5/ngx-super-dashboard.js",
+  "fesm2015": "fesm2015/ngx-super-dashboard.js",
+  "typings": "ngx-super-dashboard.d.ts",
+  "metadata": "ngx-super-dashboard.metadata.json",
+  "sideEffects": false
+}
