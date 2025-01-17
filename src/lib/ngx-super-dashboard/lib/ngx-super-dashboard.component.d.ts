@@ -1,26 +1,31 @@
 import { EventEmitter, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormGroup } from "@angular/forms";
 import { ChartSelectionChangedEvent } from "angular-google-charts";
+import { NgxSuperDashboardService } from "./ngx-super-dashboard.service";
 export declare class NgxSuperDashboardComponent implements OnInit {
-    private fb;
+    private ngxService;
     dynamicForm: FormGroup;
+    showIcon: boolean;
     dynamicFormFieldData: DynamicFieldsData[];
     cardConfig: DynamicCardsData[];
     chartsConfig: DashardCardConfig[];
-    gridOneConfig: CardTableDataConfig;
+    gridOneConfig: CardTableConfig;
     gridTwoConfig: GridTableConfigData;
+    noteText: string;
+    cardColors: string[];
     onSelect: EventEmitter<SelectedFieldValueEmit>;
     onSubmit: EventEmitter<Record<string, string | number>>;
     onSelectChart: EventEmitter<ChartEventEmitOnSelect>;
-    constructor(fb: FormBuilder);
+    constructor(ngxService: NgxSuperDashboardService);
     ngOnInit(): void;
-    typeCheck(data: any): boolean;
+    toggleExpand(index: any, idName: any): void;
     createForm(): void;
     seletedValue(ev: any): void;
     onSubmitForm(): void;
     selectedChart(ev: ChartSelectionChangedEvent, chartType: string): void;
 }
-export declare const DynamicFieldsConfiguration: (fieldConfig: DynamicFieldsData[]) => DynamicFieldsData[];
+export declare const CardsColors: string[];
+export declare const DynamicFieldsConfiguration: (fieldConfig?: DynamicFieldsData[]) => DynamicFieldsData[];
 export declare const testFieldData: DynamicFieldsData[];
 export interface AppLOVData {
     name: string | number;
@@ -31,6 +36,7 @@ export interface DynamicFieldsData {
     formControlKey: string;
     lovDataList?: AppLOVData[];
     type?: string;
+    selected?: string | number;
     className?: string;
 }
 export interface SelectedFieldValueEmit {
@@ -43,7 +49,7 @@ export interface SetDataOption {
     name: string;
     name2?: string;
 }
-export declare const DynamicCardsConfiguration: (cardConfig: DynamicCardsData[]) => DynamicCardsData[];
+export declare const DynamicCardsConfiguration: (cardConfig?: DynamicCardsData[]) => DynamicCardsData[];
 export declare const testCardData: DynamicCardsData[];
 export interface DynamicCardsData {
     title: string;
@@ -85,7 +91,7 @@ export interface ChartEventEmitOnSelect {
     ev: ChartSelectionChangedEvent;
     chartType: string;
 }
-export declare const CardTableDataConfig: (cardTableData?: CardTableDataConfig) => CardTableDataConfig;
+export declare const CardTableDataConfig: (cardTableData?: CardTableConfig) => CardTableConfig;
 export declare const testCardTable: {
     cardTitle: string;
     tableColumnHeadings: string[];
@@ -98,7 +104,7 @@ export declare const testCardTable: {
         gold: string;
     }[];
 };
-export interface CardTableDataConfig {
+export interface CardTableConfig {
     cardTitle?: string;
     tableColumnHeadings: string[];
     tableDataKey: string[];

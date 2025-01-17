@@ -4,9 +4,8 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NgxSuperDashboardModule } from "src/lib/ngx-super-dashboard/esm5/lib/ngx-super-dashboard.module.js";
-// import { NgBaseLibModule } from "src/lib/ng-base-lib/esm5/lib/ng-base-lib.module.js";
 import { GoogleChartsModule, ScriptLoaderService } from "angular-google-charts";
-// import { NgxSuperDashboardModule } from "../../node_modules/ngx-super-dashboard/esm5/lib/ngx-super-dashboard.module.js";
+// import { NgxSuperDashboardService } from "src/lib/ngx-super-dashboard/esm5/lib/ngx-super-dashboard.service.js";
 
 @NgModule({
   declarations: [AppComponent],
