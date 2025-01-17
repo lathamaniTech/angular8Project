@@ -250,7 +250,7 @@ export class AppComponent implements OnInit {
           ];
         }
       });
-      this.ngxData._formGroupSetting.get("branch").setValue("1");
+      this.ngxData.formGroupSetting.get("branch").setValue("1");
 
       this.chartsData[1].chartData = [
         ["Retail", 203, "red"],
